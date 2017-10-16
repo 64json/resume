@@ -1,0 +1,113 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #E9E9E9;
+  font-family: "DIN Alternate";
+  font-weight: lighter;
+  color: #404040;
+  max-width: 612px;
+  max-height: 792px; }
+
+* {
+  flex-shrink: 0; }
+
+a {
+  color: inherit;
+  text-decoration: inherit; }
+
+.resume {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch; }
+  .resume .section {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column; }
+    .resume .section .title {
+      font-family: "DIN Condensed";
+      text-transform: uppercase; }
+    .resume .section .content .row {
+      margin-bottom: 2px; }
+      .resume .section .content .row.small {
+        font-size: 12px; }
+  .resume .header {
+    background-color: #404040;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px; }
+    .resume .header .name {
+      font-family: Raleway;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-transform: uppercase;
+      margin-bottom: 40px; }
+      .resume .header .name .first-name {
+        font-size: 24px;
+        letter-spacing: 3px;
+        margin-right: -3px; }
+      .resume .header .name .middle-name {
+        font-size: 24px;
+        letter-spacing: 2px;
+        margin-right: -2px; }
+      .resume .header .name .last-name {
+        font-size: 24px;
+        letter-spacing: 10px;
+        margin-right: -10px; }
+    .resume .header .section {
+      margin-bottom: 40px; }
+      .resume .header .section .title {
+        color: #BFBFBF; }
+  .resume .body {
+    background-color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px; }
+    .resume .body a {
+      text-decoration: underline; }
+    .resume .body .section {
+      margin-bottom: 12px; }
+      .resume .body .section .title {
+        color: black;
+        align-self: center; }
+      .resume .body .section .content {
+        margin-top: 4px; }
+        .resume .body .section .content .item {
+          font-size: 12px;
+          margin-bottom: 12px; }
+          .resume .body .section .content .item .primary {
+            display: flex; }
+            .resume .body .section .content .item .primary .name {
+              flex: 1; }
+            .resume .body .section .content .item .primary .location {
+              margin-right: 8px; }
+          .resume .body .section .content .item .row {
+            color: #7F7F7F;
+            margin-left: 12px; }
+            .resume .body .section .content .item .row:before {
+              position: absolute;
+              content: "-";
+              margin-left: -8px; }
+      .resume .body .section.section-awards {
+        margin-bottom: 0; }
+        .resume .body .section.section-awards .title {
+          margin-bottom: 0; }
+        .resume .body .section.section-awards .content .item {
+          margin-bottom: 8px; }
+
+/*# sourceMappingURL=styles.css.map */
