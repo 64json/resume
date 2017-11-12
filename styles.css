@@ -1,6 +1,7 @@
-html, body {
+html {
   width: 100%;
   height: 100%;
+  font-size: 0.014in;
   margin: 0;
   padding: 0; }
 
@@ -14,8 +15,10 @@ body {
   font-family: "DIN Alternate";
   font-weight: lighter;
   color: #404040;
-  max-width: 612px;
-  max-height: 792px; }
+  margin: 0;
+  padding: 24rem;
+  width: 100%;
+  min-height: 100%; }
 
 * {
   flex-shrink: 0; }
@@ -25,28 +28,29 @@ a {
   text-decoration: inherit; }
 
 .resume {
-  width: 100%;
-  height: 100%;
+  width: 8.5in;
+  height: 11in;
   display: flex;
-  align-items: stretch; }
+  align-items: stretch;
+  box-shadow: 0 0 24rem rgba(0, 0, 0, 0.2); }
   .resume .section {
-    font-size: 14px;
+    font-size: 14rem;
     display: flex;
     flex-direction: column; }
     .resume .section .title {
       font-family: "DIN Condensed";
       text-transform: uppercase; }
     .resume .section .content .row {
-      margin-bottom: 2px; }
+      margin-bottom: 2rem; }
       .resume .section .content .row.small {
-        font-size: 12px; }
+        font-size: 12rem; }
   .resume .header {
     background-color: #404040;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px; }
+    padding: 20rem; }
     .resume .header .name {
       font-family: Raleway;
       font-weight: bold;
@@ -54,21 +58,22 @@ a {
       flex-direction: column;
       align-items: center;
       text-transform: uppercase;
-      margin-bottom: 40px; }
+      margin-bottom: 40rem; }
       .resume .header .name .first-name {
-        font-size: 24px;
-        letter-spacing: 3px;
-        margin-right: -3px; }
+        font-size: 24rem;
+        letter-spacing: 1.5rem;
+        margin-right: -1.5rem; }
       .resume .header .name .middle-name {
-        font-size: 24px;
-        letter-spacing: 2px;
-        margin-right: -2px; }
+        font-size: 24rem;
+        letter-spacing: 3rem;
+        margin-right: -3rem; }
       .resume .header .name .last-name {
-        font-size: 24px;
-        letter-spacing: 10px;
-        margin-right: -10px; }
+        font-size: 24rem;
+        letter-spacing: 9.5rem;
+        margin-right: -9.5rem;
+        margin-left: -2rem; }
     .resume .header .section {
-      margin-bottom: 40px; }
+      margin-bottom: 40rem; }
       .resume .header .section .title {
         color: #BFBFBF; }
   .resume .body {
@@ -77,37 +82,43 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px; }
+    padding: 20rem; }
     .resume .body a {
       text-decoration: underline; }
     .resume .body .section {
-      margin-bottom: 12px; }
+      margin-bottom: 12rem; }
       .resume .body .section .title {
         color: black;
         align-self: center; }
       .resume .body .section .content {
-        margin-top: 4px; }
+        margin-top: 4rem; }
         .resume .body .section .content .item {
-          font-size: 12px;
-          margin-bottom: 12px; }
+          font-size: 12rem;
+          margin-bottom: 12rem; }
           .resume .body .section .content .item .primary {
             display: flex; }
             .resume .body .section .content .item .primary .name {
               flex: 1; }
             .resume .body .section .content .item .primary .location {
-              margin-right: 8px; }
+              margin-right: 8rem; }
           .resume .body .section .content .item .row {
             color: #7F7F7F;
-            margin-left: 12px; }
+            margin-left: 12rem; }
             .resume .body .section .content .item .row:before {
               position: absolute;
               content: "-";
-              margin-left: -8px; }
+              margin-left: -8rem; }
       .resume .body .section.section-awards {
         margin-bottom: 0; }
         .resume .body .section.section-awards .title {
           margin-bottom: 0; }
         .resume .body .section.section-awards .content .item {
-          margin-bottom: 8px; }
+          margin-bottom: 8rem; }
+
+@media print {
+  @page {
+    margin: 0; }
+  body {
+    padding: 0; } }
 
 /*# sourceMappingURL=styles.css.map */
