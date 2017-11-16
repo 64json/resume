@@ -114,6 +114,8 @@ a {
           margin-bottom: 0; }
         .resume .body .section.section-awards .content .item {
           margin-bottom: 8rem; }
+          .resume .body .section.section-awards .content .item:last-child {
+            margin-bottom: 0; }
 
 @media print {
   @page {
