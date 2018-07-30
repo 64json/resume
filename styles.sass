@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:700|Raleway')
+
 html
   width: 100%
   height: 100%
@@ -12,7 +14,7 @@ body
   justify-content: center
   box-sizing: border-box
   background-color: #E9E9E9
-  font-family: "DIN Alternate"
+  font-family: 'Open Sans', sans-serif
   font-weight: lighter
   color: #404040
   margin: 0
@@ -35,95 +37,81 @@ a
   box-shadow: 0 0 24rem rgba(0, 0, 0, .2)
 
   .section
-    font-size: 14rem
+    font-size: 12rem
     display: flex
     flex-direction: column
 
     .title
-      font-family: "DIN Condensed"
+      font-family: 'Open Sans Condensed', sans-serif
       text-transform: uppercase
+      margin-bottom: 4rem
 
     .content
       .row
-        margin-bottom: 2rem
-
-        &.small
-          font-size: 12rem
+        margin-bottom: 4rem
 
   .header
     background-color: #404040
     color: white
     display: flex
     flex-direction: column
-    justify-content: center
+    justify-content: space-around
     padding: 20rem
+    width: 160rem
 
     .name
-      font-family: Raleway
+      font-family: 'Raleway', sans-serif
       font-weight: bold
       display: flex
       flex-direction: column
       align-items: center
       text-transform: uppercase
-      margin-bottom: 40rem
 
-      .first-name
+      .word
+        display: flex
+        justify-content: space-between
         font-size: 24rem
-        letter-spacing: 1.5rem
-        margin-right: -1.5rem
-
-      .middle-name
-        font-size: 24rem
-        letter-spacing: 3rem
-        margin-right: -3rem
-
-      .last-name
-        font-size: 24rem
-        letter-spacing: 9.5rem
-        margin-right: -9.5rem
-        margin-left: -2rem
+        width: 100rem
 
     .section
-      margin-bottom: 40rem
-
       .title
-        color: #BFBFBF
+        color: #7F7F7F
 
   .body
     background-color: white
     flex: 1
     display: flex
     flex-direction: column
-    justify-content: center
+    justify-content: space-around
     padding: 20rem
 
     a
       text-decoration: underline
 
     .section
-      margin-bottom: 12rem
-
       .title
+        display: flex
+        align-items: center
         color: black
-        align-self: center
+
+        &:after
+          content: ''
+          margin-left: 16rem
+          flex: 1
+          height: 2rem
+          background-color: #E9E9E9
 
       .content
-        margin-top: 4rem
-
         .item
-          font-size: 12rem
-          margin-bottom: 12rem
+          margin-bottom: 4rem
 
           .primary
             display: flex
+            margin-bottom: 4rem
 
             .name
               flex: 1
-
-            .location
-              margin-right: 8rem
-
-            .date
+              margin-right: 12rem
 
           .row
             color: #7F7F7F
@@ -133,19 +121,6 @@ a
               position: absolute
               content: '-'
               margin-left: -8rem
-
-      &.section-awards
-        margin-bottom: 0
-
-        .title
-          margin-bottom: 0
-
-        .content
-          .item
-            margin-bottom: 8rem
-
-            &:last-child
-              margin-bottom: 0
 
 @media print
   @page

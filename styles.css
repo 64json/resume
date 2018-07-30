@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:700|Raleway");
 html {
   width: 100%;
   height: 100%;
   font-size: 0.014in;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 body {
   display: flex;
@@ -12,115 +14,121 @@ body {
   justify-content: center;
   box-sizing: border-box;
   background-color: #E9E9E9;
-  font-family: "DIN Alternate";
+  font-family: "Open Sans", sans-serif;
   font-weight: lighter;
   color: #404040;
   margin: 0;
   padding: 24rem;
   width: 100%;
-  min-height: 100%; }
+  min-height: 100%;
+}
 
 * {
-  flex-shrink: 0; }
+  flex-shrink: 0;
+}
 
 a {
   color: inherit;
-  text-decoration: inherit; }
+  text-decoration: inherit;
+}
 
 .resume {
   width: 8.5in;
   height: 11in;
   display: flex;
   align-items: stretch;
-  box-shadow: 0 0 24rem rgba(0, 0, 0, 0.2); }
-  .resume .section {
-    font-size: 14rem;
-    display: flex;
-    flex-direction: column; }
-    .resume .section .title {
-      font-family: "DIN Condensed";
-      text-transform: uppercase; }
-    .resume .section .content .row {
-      margin-bottom: 2rem; }
-      .resume .section .content .row.small {
-        font-size: 12rem; }
-  .resume .header {
-    background-color: #404040;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20rem; }
-    .resume .header .name {
-      font-family: Raleway;
-      font-weight: bold;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-transform: uppercase;
-      margin-bottom: 40rem; }
-      .resume .header .name .first-name {
-        font-size: 24rem;
-        letter-spacing: 1.5rem;
-        margin-right: -1.5rem; }
-      .resume .header .name .middle-name {
-        font-size: 24rem;
-        letter-spacing: 3rem;
-        margin-right: -3rem; }
-      .resume .header .name .last-name {
-        font-size: 24rem;
-        letter-spacing: 9.5rem;
-        margin-right: -9.5rem;
-        margin-left: -2rem; }
-    .resume .header .section {
-      margin-bottom: 40rem; }
-      .resume .header .section .title {
-        color: #BFBFBF; }
-  .resume .body {
-    background-color: white;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20rem; }
-    .resume .body a {
-      text-decoration: underline; }
-    .resume .body .section {
-      margin-bottom: 12rem; }
-      .resume .body .section .title {
-        color: black;
-        align-self: center; }
-      .resume .body .section .content {
-        margin-top: 4rem; }
-        .resume .body .section .content .item {
-          font-size: 12rem;
-          margin-bottom: 12rem; }
-          .resume .body .section .content .item .primary {
-            display: flex; }
-            .resume .body .section .content .item .primary .name {
-              flex: 1; }
-            .resume .body .section .content .item .primary .location {
-              margin-right: 8rem; }
-          .resume .body .section .content .item .row {
-            color: #7F7F7F;
-            margin-left: 12rem; }
-            .resume .body .section .content .item .row:before {
-              position: absolute;
-              content: "-";
-              margin-left: -8rem; }
-      .resume .body .section.section-awards {
-        margin-bottom: 0; }
-        .resume .body .section.section-awards .title {
-          margin-bottom: 0; }
-        .resume .body .section.section-awards .content .item {
-          margin-bottom: 8rem; }
-          .resume .body .section.section-awards .content .item:last-child {
-            margin-bottom: 0; }
+  box-shadow: 0 0 24rem rgba(0, 0, 0, 0.2);
+}
+.resume .section {
+  font-size: 12rem;
+  display: flex;
+  flex-direction: column;
+}
+.resume .section .title {
+  font-family: "Open Sans Condensed", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+.resume .section .content .row {
+  margin-bottom: 4rem;
+}
+.resume .header {
+  background-color: #404040;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20rem;
+  width: 160rem;
+}
+.resume .header .name {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+}
+.resume .header .name .word {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rem;
+  width: 100rem;
+}
+.resume .header .section .title {
+  color: #7F7F7F;
+}
+.resume .body {
+  background-color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20rem;
+}
+.resume .body a {
+  text-decoration: underline;
+}
+.resume .body .section .title {
+  display: flex;
+  align-items: center;
+  color: black;
+}
+.resume .body .section .title:after {
+  content: "";
+  margin-left: 16rem;
+  flex: 1;
+  height: 2rem;
+  background-color: #E9E9E9;
+}
+.resume .body .section .content .item {
+  margin-bottom: 4rem;
+}
+.resume .body .section .content .item .primary {
+  display: flex;
+  margin-bottom: 4rem;
+}
+.resume .body .section .content .item .primary .name {
+  flex: 1;
+  margin-right: 12rem;
+}
+.resume .body .section .content .item .row {
+  color: #7F7F7F;
+  margin-left: 12rem;
+}
+.resume .body .section .content .item .row:before {
+  position: absolute;
+  content: "-";
+  margin-left: -8rem;
+}
 
 @media print {
   @page {
-    margin: 0; }
+    margin: 0;
+  }
   body {
-    padding: 0; } }
+    padding: 0;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
