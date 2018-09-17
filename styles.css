@@ -49,8 +49,21 @@ a {
   text-transform: uppercase;
   margin-bottom: 4rem;
 }
-.resume .section .content .row {
+.resume .section .content .item {
   margin-bottom: 4rem;
+}
+.resume .section .content .item .primary,
+.resume .section .content .item .row {
+  margin-bottom: 4rem;
+}
+.resume .section .content .item .row {
+  color: #7F7F7F;
+  margin-left: 12rem;
+}
+.resume .section .content .item .row:before {
+  position: absolute;
+  content: "-";
+  margin-left: -8rem;
 }
 .resume .header {
   background-color: #404040;
@@ -101,25 +114,12 @@ a {
   height: 2px;
   background-color: #E9E9E9;
 }
-.resume .body .section .content .item {
-  margin-bottom: 4rem;
-}
 .resume .body .section .content .item .primary {
   display: flex;
-  margin-bottom: 4rem;
 }
 .resume .body .section .content .item .primary .name {
   flex: 1;
   margin-right: 12rem;
-}
-.resume .body .section .content .item .row {
-  color: #7F7F7F;
-  margin-left: 12rem;
-}
-.resume .body .section .content .item .row:before {
-  position: absolute;
-  content: "-";
-  margin-left: -8rem;
 }
 
 @media print {

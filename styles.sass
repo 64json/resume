@@ -47,8 +47,21 @@ a
       margin-bottom: 4rem
 
     .content
-      .row
+      .item
         margin-bottom: 4rem
+
+        .primary,
+        .row
+          margin-bottom: 4rem
+
+        .row
+          color: #7F7F7F
+          margin-left: 12rem
+
+          &:before
+            position: absolute
+            content: '-'
+            margin-left: -8rem
 
   .header
     background-color: #404040
@@ -103,24 +116,12 @@ a
 
       .content
         .item
-          margin-bottom: 4rem
-
           .primary
             display: flex
-            margin-bottom: 4rem
 
             .name
               flex: 1
               margin-right: 12rem
-
-          .row
-            color: #7F7F7F
-            margin-left: 12rem
-
-            &:before
-              position: absolute
-              content: '-'
-              margin-left: -8rem
 
 @media print
   @page
