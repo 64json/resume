@@ -98,7 +98,7 @@ a {
   content: "";
   margin-left: 16rem;
   flex: 1;
-  height: 2rem;
+  height: 2px;
   background-color: #E9E9E9;
 }
 .resume .body .section .content .item {
