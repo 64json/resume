@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:700|Raleway");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:700");
 html {
   width: 100%;
   height: 100%;
@@ -45,8 +45,8 @@ a {
   flex-direction: column;
 }
 .resume .section .title {
-  font-family: "Open Sans Condensed", sans-serif;
-  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
   margin-bottom: 4rem;
 }
 .resume .section .content .item {
@@ -57,7 +57,7 @@ a {
   margin-bottom: 4rem;
 }
 .resume .section .content .item .row {
-  color: #7F7F7F;
+  color: #888888;
   margin-left: 12rem;
 }
 .resume .section .content .item .row:before {
@@ -67,7 +67,7 @@ a {
 }
 .resume .header {
   background-color: #404040;
-  color: white;
+  color: #E9E9E9;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -75,7 +75,7 @@ a {
   width: 160rem;
 }
 .resume .header .name {
-  font-family: "Raleway", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -84,12 +84,11 @@ a {
 }
 .resume .header .name .word {
   display: flex;
-  justify-content: space-between;
   font-size: 24rem;
-  width: 100rem;
+  letter-spacing: 4rem;
 }
 .resume .header .section .title {
-  color: #7F7F7F;
+  color: white;
 }
 .resume .body {
   background-color: white;
