@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:700')
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+
+$theme-primary: #433952
+$theme-secondary: #EEEEEE
+$theme-tertiary: #F8F8F8
+$color-primary: #444444
+$color-secondary: #808080
+$font-large: 16rem
+$font-medium: 12rem
+$font-small: 10rem
 
 html
   width: 100%
@@ -14,9 +23,8 @@ body
   justify-content: center
   box-sizing: border-box
   background-color: #E9E9E9
-  font-family: 'Open Sans', sans-serif
+  font-family: 'Arial', sans-serif
   font-weight: lighter
-  color: #404040
   margin: 0
   padding: 24rem
   width: 100%
@@ -33,94 +41,107 @@ a
   width: 8.5in
   height: 11.0in
   display: flex
+  flex-direction: column
   align-items: stretch
-  box-shadow: 0 0 24rem rgba(0, 0, 0, .2)
-
-  .section
-    font-size: 12rem
-    display: flex
-    flex-direction: column
-
-    .title
-      font-family: 'Open Sans', sans-serif
-      font-weight: bold
-      margin-bottom: 4rem
-
-    .content
-      .item
-        margin-bottom: 4rem
-
-        .primary,
-        .row
-          margin-bottom: 4rem
-
-        .row
-          color: #888888
-          margin-left: 12rem
-
-          &:before
-            position: absolute
-            content: '-'
-            margin-left: -8rem
+  box-shadow: 0 0 24rem rgba(0, 0, 0, .16)
+  color: $color-primary
 
   .header
-    background-color: #404040
-    color: #E9E9E9
     display: flex
     flex-direction: column
-    justify-content: space-around
-    padding: 20rem
-    width: 160rem
+    background-color: $theme-primary
+    align-items: center
+    color: $theme-secondary
 
     .name
-      font-family: 'Open Sans', sans-serif
+      padding: 36rem
       font-weight: bold
+      font-size: 24rem
+      color: white
+
+    .bar
+      align-self: stretch
       display: flex
-      flex-direction: column
-      align-items: center
-      text-transform: uppercase
+      background-color: rgba(white, .16)
 
-      .word
+      .item
+        flex: 1
         display: flex
-        font-size: 24rem
-        letter-spacing: 4rem
+        justify-content: center
+        align-items: center
+        padding: 6rem
+        font-size: $font-small
+        color: $theme-secondary
 
-    .section
-      .title
-        color: white
+        i
+          margin-right: 4rem
 
   .body
-    background-color: white
     flex: 1
     display: flex
-    flex-direction: column
-    justify-content: space-around
-    padding: 20rem
-
-    a
-      text-decoration: underline
+    align-items: stretch
 
     .section
+      font-size: $font-medium
+      display: flex
+      flex-direction: column
+
       .title
         display: flex
         align-items: center
-        color: black
+        font-weight: bold
+        margin-bottom: 4rem
+        font-size: $font-large
 
         &:after
           content: ''
           margin-left: 16rem
           flex: 1
-          height: 2px
-          background-color: #E9E9E9
+          height: 2rem
+          background-color: $theme-secondary
 
       .content
         .item
+          margin-bottom: 8rem
+
+          .primary,
+          .row
+            margin-bottom: 4rem
+
           .primary
             display: flex
 
             .name
               flex: 1
               margin-right: 12rem
+
+            .level,
+            .date
+              color: $color-secondary
+
+          .row
+            color: $color-secondary
+            margin-left: 12rem
+
+            &:before
+              position: absolute
+              content: '-'
+              margin-left: -8rem
+
+    .narrow
+      background-color: $theme-secondary
+      width: 152rem
+
+    .wide
+      background-color: $theme-tertiary
+      flex: 1
+
+    .narrow,
+    .wide
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      padding: 20rem
 
 @media print
   @page

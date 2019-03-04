@@ -1,121 +1,143 @@
 doctype html
-html(lang='en')
+html(lang="en")
   head
-    meta(charset='UTF-8')
+    meta(charset="UTF-8")
     title Jason Park
-    meta(name='description', content="Jinseo Jason Park's Resume")
-    meta(name='author', content='Jinseo Jason Park')
-    link(rel='stylesheet', href='styles.css')
+    meta(name="description", content="Jinseo Park's Resume")
+    meta(name="author", content="Jinseo Jason Park")
+    link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.7.2/css/all.css", integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr", crossorigin="anonymous")
+    link(rel="stylesheet", href="styles.css")
   body
     .resume
       .header
-        .name
-          .word Jinseo
-          .word Park
-        .section
-          .title Information
-          .content
-            .item Atlanta, GA 30332
-            .item
-              a(href="mailto:jason.park@gatech.edu") jason.park@gatech.edu
-            .item
-              a(href="https://github.com/parkjs814") github.com/parkjs814
-            .item
-              a(href="https://jasonpark.me/") jasonpark.me
-        .section
-          .title Education
-          .content
-            .item
-              .primary Georgia Institute of Technology
-              .row BS in <b>Computer Science</b>
-              .row Minor in <b>Economics</b>
-              .row Expected <b>Dec. 2020</b>
-            .item Kansas Academy of Mathematics and Science
-            .item Korea Digital Media High School
-        .section
-          .title Languages
-          .content
-            .item ECMAScript / Java / Haskell / C++ / Python
-        .section
-          .title Frameworks
-          .content
-            .item Node.js / React / Webpack / Gulp.js / Mongoose / Sequelize / Socket.IO / Django / Sass
-        .section
-          .title Databases
-          .content
-            .item MongoDB / MySQL
+        .name Jinseo Park
+        .bar
+          a.item(href="https://github.com/parkjs814")
+            i(class="fab fa-github")
+            span github.com/parkjs814
+          a.item(href="https://www.google.com/maps/place/Atlanta,+GA+30332/@33.7700012,-84.3833291,17z/data=!3m1!4b1!4m5!3m4!1s0x88f504a32025c03d:0x435f52a0da5daab!8m2!3d33.7700012!4d-84.3811458")
+            i(class="fas fa-map-marker-alt")
+            span Atlanta, GA 30332
+          a.item(href="mailto:jason.park@gatech.edu")
+            i(class="fas fa-envelope")
+            span jason.park@gatech.edu
       .body
-        .section
-          .title Work Experience
-          .content
-            .item
-              .primary
-                .name Web Development Team Lead @ ChapoRoyal
-                .date Feb. 2017 -
-              .row Leading the team of 2 front-end and 2 back-end developers.
-              .row Planning projects with my employer, setting tech agendas for the team, and reviewing my teammates' code.
-              .row Working on several B2B projects, including an exhibition ticketing solution.
-        .section
-          .title Projects
-          .content
-            .item
-              .primary
-                .name <a href="https://github.com/parkjs814/gt-scheduler">GT Scheduler</a> / Web
-                .date 2018
-              .row Developed a scheduler that helps students find the best schedule among all the possible combinations of courses.
-              .row Over 800 Georgia Tech students have used it.
-            .item
-              .primary
-                .name <a href="https://github.com/parkjs814/DuoCoder">DuoCoder</a> / Web
-                .date 2016
-              .row Developed a programming language learning platform inspired by Duolingo.
-            .item
-              .primary
-                .name <a href="https://github.com/algorithm-visualizer/algorithm-visualizer">algorithm-visualizer</a> / Web
-                .date 2016
-              .row Developed an interactive online platform that visualizes algorithms from code.
-              .row Gained 12k+ stars on GitHub.
-            .item
-              .primary
-                .name <a href="https://www.youtube.com/watch?v=sQd3ySM3J0A">Taskbar 7</a> / Android
-                .date 2013
-              .row Developed a floating widget behaving like a Windows taskbar.
-              .row Made $8k in a month.
-        .section.section-awards
-          .title Awards
-          .content
-            .item
-              .primary
-                .name EarthxHack
-                .date 2018
-              .row Third Place
-            .item
-              .primary
-                .name Kansas State University HS Programming Contest
-                .date 2017
-              .row First Place in Advanced Division
-            .item
-              .primary
-                .name Consortium for Computing Sciences in Colleges: Midwest
-                .date 2017
-              .row First Place in Application Track of Student Showcase
-            .item
-              .primary
-                .name University of Texas at Dallas HS Programming Contest
-                .date 2016
-              .row First Place in Advanced Division
-            .item
-              .primary
-                .name USA Computing Olympiad
-                .date 2015
-              .row Platinum Division
-            .item
-              .primary
-                .name Google Developers Group Korea Student Hackathon
-                .date 2014
-              .row First Place in Technical Category
-            .item
-              .primary
-                .name Korea Olympiad in Informatics
-                .date 2010
-              .row Silver Medal
+        .narrow
+          .section
+            .title Education
+            .content
+              .item
+                .primary Georgia Institute of Technology
+                .row BS in <b>Computer Science</b>
+                .row Concentration in <b>Theory</b> and <b>Intelligence</b>
+                .row Minor in <b>Economics</b>
+                .row Expected <b>Dec. 2020</b>
+          .section
+            .title Coursework
+            .content
+              .item
+                .row Data Structures and Algorithms
+                .row Introduction to Discrete Mathematics
+                .row Objects and Design
+                .row Design and Analysis of Algorithms
+                .row CREATE-X Capstone Design
+                .row Technical Communication
+          .section
+            .title Skills
+            .content
+              .item
+                .primary
+                  .name JavaScript
+                  .level Expert
+                .primary
+                  .name Java
+                  .level Advanced
+                .primary
+                  .name Scala
+                  .level Advanced
+                .primary
+                  .name Haskell
+                  .level Intermediate
+                .primary
+                  .name C++
+                  .level Intermediate
+                .primary
+                  .name Python
+                  .level Intermediate
+          .section
+            .title Languages
+            .content
+              .item
+                .primary
+                  .name English
+                  .level Fluent
+                .primary
+                  .name Korean
+                  .level Native
+                .primary
+                  .name Spanish
+                  .level Intermediate
+        .wide
+          .section
+            .title Work Experience
+            .content
+              .item
+                .primary
+                  .name ChapoRoyal
+                  .date Feb. 2017 -
+                .row Leading a team of 2 front-end and 2 back-end developers.
+                .row Planning projects with my employer, setting tech agendas for the team, and reviewing my teammates' code.
+                .row Working on several projects outsourced from businesses.
+          .section
+            .title Projects
+            .content
+              .item
+                .primary
+                  .name
+                    a(href="https://github.com/parkjs814/gt-scheduler") GT Scheduler
+                  .date 2018
+                .row Developed a scheduler that helps students find the best schedule among all the possible combinations of courses.
+                .row Around 1k Georgia Tech students have used it.
+              .item
+                .primary
+                  .name
+                    a(href="https://github.com/algorithm-visualizer") Algorithm Visualizer
+                  .date 2016
+                .row Developed an interactive online platform that visualizes algorithms from code.
+                .row Over 35 developers have contributed to it.
+                .row Gained 13k+ stars on GitHub.
+              .item
+                .primary
+                  .name
+                    a(href="https://www.youtube.com/watch?v=sQd3ySM3J0A") Taskbar 7
+                  .date 2013
+                .row Developed a floating Android widget behaving like a Windows taskbar.
+                .row Made $8k in a month from Google Play.
+          .section.section-awards
+            .title Awards
+            .content
+              .item
+                .primary
+                  .name EarthxHack
+                  .date 2018
+                .row Third Place
+              .item
+                .primary
+                  .name Kansas State University HS Programming Contest
+                  .date 2017
+                .row First Place in Advanced Division
+              .item
+                .primary
+                  .name Consortium for Computing Sciences in Colleges: Midwest
+                  .date 2017
+                .row First Place in Application Track of Student Showcase
+              .item
+                .primary
+                  .name University of Texas at Dallas HS Programming Contest
+                  .date 2016
+                .row First Place in Advanced Division
+              .item
+                .primary
+                  .name USA Computing Olympiad
+                  .date 2015
+                .row Platinum Division
