@@ -50,7 +50,7 @@ a {
 .resume .header .name {
   padding: 36rem;
   font-weight: bold;
-  font-size: 24rem;
+  font-size: 28rem;
   color: white;
 }
 .resume .header .bar {
@@ -73,6 +73,7 @@ a {
 .resume .body {
   flex: 1;
   display: flex;
+  flex-direction: row-reverse;
   align-items: stretch;
 }
 .resume .body .section {
