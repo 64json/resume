@@ -48,9 +48,9 @@ a {
   color: #EEEEEE;
 }
 .resume .header .name {
-  padding: 36rem;
+  padding: 32rem;
   font-weight: bold;
-  font-size: 28rem;
+  font-size: 24rem;
   color: white;
 }
 .resume .header .bar {
@@ -96,7 +96,9 @@ a {
   background-color: #EEEEEE;
 }
 .resume .body .section .content .item {
-  margin-bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
 }
 .resume .body .section .content .item .primary,
 .resume .body .section .content .item .row {
