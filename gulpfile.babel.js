@@ -10,22 +10,23 @@ import through from 'through2';
 import puppeteer from 'puppeteer';
 import connect from 'gulp-connect';
 
-const indexPath = path.join(__dirname, 'index.html');
-const sassPath = path.join(__dirname, 'stylesheet.sass');
-const pugPath = path.join(__dirname, 'resume.pug');
-const outputPath = './built';
+const srcPath = path.join(__dirname, 'src');
+const indexPath = path.join(srcPath, 'index.html');
+const sassPath = path.join(srcPath, 'stylesheet.sass');
+const pugPath = path.join(srcPath, 'resume.pug');
+const builtPath = './built';
 const port = 8080;
 
 gulp.task('copyIndex', () =>
   gulp.src(indexPath)
-    .pipe(gulp.dest(outputPath)),
+    .pipe(gulp.dest(builtPath)),
 );
 
 gulp.task('buildSass', () =>
   gulp
     .src(sassPath)
     .pipe(sass({ outputStyle: 'compressed' }))
-    .pipe(gulp.dest(outputPath))
+    .pipe(gulp.dest(builtPath))
     .pipe(connect.reload()),
 );
 
@@ -33,7 +34,7 @@ gulp.task('buildPug', () =>
   gulp
     .src(pugPath)
     .pipe(pug({}))
-    .pipe(gulp.dest(outputPath))
+    .pipe(gulp.dest(builtPath))
     .pipe(connect.reload()),
 );
 
@@ -48,7 +49,7 @@ gulp.task('createPDF', () =>
       (async () => {
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
-        await page.goto(`http://localhost:${port}/built/resume.html`, { waitUntil: 'networkidle2' });
+        await page.goto(`http://localhost:${port}/resume.html`, { waitUntil: 'networkidle2' });
         const buffer = await page.pdf({ printBackground: true });
         await browser.close();
         file.contents = buffer;
@@ -56,12 +57,13 @@ gulp.task('createPDF', () =>
         cb(null, file);
       })();
     }))
-    .pipe(gulp.dest(outputPath)),
+    .pipe(gulp.dest(builtPath)),
 );
 
 gulp.task('openServer', done => {
   connect.server({
     port,
+    root: builtPath,
     livereload: true,
   });
   done();
@@ -86,4 +88,9 @@ gulp.task('build', gulp.series(
   'closeServer',
 ));
 
-gulp.task('default', gulp.series('openServer', 'watch'));
+gulp.task('default', gulp.series(
+  'openServer',
+  'copyIndex',
+  gulp.parallel('buildSass', 'buildPug'),
+  'watch',
+));
