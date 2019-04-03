@@ -4,7 +4,7 @@
   "scripts": {
     "start": "gulp",
     "build": "gulp build",
-    "publish": "npm run build && gh-pages -d built -b master"
+    "deploy": "npm run build && gh-pages -d built"
   },
   "repository": {
     "type": "git",
