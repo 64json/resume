@@ -10,10 +10,16 @@ import through from 'through2';
 import puppeteer from 'puppeteer';
 import connect from 'gulp-connect';
 
+const indexPath = path.join(__dirname, 'index.html');
 const sassPath = path.join(__dirname, 'stylesheet.sass');
 const pugPath = path.join(__dirname, 'resume.pug');
 const outputPath = './built';
 const port = 8080;
+
+gulp.task('copyIndex', () =>
+  gulp.src(indexPath)
+    .pipe(gulp.dest(outputPath)),
+);
 
 gulp.task('buildSass', () =>
   gulp
@@ -74,6 +80,7 @@ gulp.task('watch', done => {
 
 gulp.task('build', gulp.series(
   'openServer',
+  'copyIndex',
   gulp.parallel('buildSass', 'buildPug'),
   'createPDF',
   'closeServer',
