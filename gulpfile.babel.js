@@ -2,55 +2,81 @@
 
 import path from 'path';
 import gulp from 'gulp';
-import gutil from 'gulp-util';
 import pug from 'gulp-pug';
 import sass from 'gulp-sass';
-import pkg from './package.json';
-
-const outputPaths = {
-  css: './',
-  pug: './',
-};
+import pdf from 'gulp-html-pdf';
+import gutil from 'gulp-util';
+import through from 'through2';
+import puppeteer from 'puppeteer';
+import connect from 'gulp-connect';
 
 const sassPath = path.join(__dirname, 'stylesheet.sass');
 const pugPath = path.join(__dirname, 'resume.pug');
+const outputPath = './built';
+const port = 8080;
 
-function onError(err) {
-  console.log(err);
-  this.emit('end');
-}
+gulp.task('buildSass', () =>
+  gulp
+    .src(sassPath)
+    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(gulp.dest(outputPath))
+    .pipe(connect.reload()),
+);
 
-const buildCss = () => {
-  gutil.log('\n\nBuild CSS Paths: \n', sassPath, '\n\n');
+gulp.task('buildPug', () =>
+  gulp
+    .src(pugPath)
+    .pipe(pug({}))
+    .pipe(gulp.dest(outputPath))
+    .pipe(connect.reload()),
+);
 
-  return gulp.src(sassPath)
-    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(gulp.dest(outputPaths.css));
-};
+gulp.task('createPDF', () =>
+  gulp
+    .src('built/resume.html')
+    .pipe(through.obj(function (file, enc, cb) {
+      if (file.isNull()) {
+        cb(null, file);
+        return;
+      }
+      (async () => {
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.goto(`http://localhost:${port}/built/resume.html`, { waitUntil: 'networkidle2' });
+        const buffer = await page.pdf({ printBackground: true });
+        await browser.close();
+        file.contents = buffer;
+        file.path = gutil.replaceExtension(file.path, '.pdf');
+        cb(null, file);
+      })();
+    }))
+    .pipe(gulp.dest(outputPath)),
+);
 
-const buildPug = () => {
-  gutil.log('\n\nBuild pug Paths: \n', pugPath, '\n\n');
+gulp.task('openServer', done => {
+  connect.server({
+    port,
+    livereload: true,
+  });
+  done();
+});
 
-  const locals = {
-    title: 'Jason Park',
-    description: pkg.description,
-    author: pkg.author,
-  };
+gulp.task('closeServer', done => {
+  connect.serverClose();
+  done();
+});
 
-  return gulp.src(pugPath)
-    .on('error', onError)
-    .pipe(pug({ locals }))
-    .pipe(gulp.dest(outputPaths.pug));
-};
+gulp.task('watch', done => {
+  gulp.watch(sassPath, gulp.series('buildSass'));
+  gulp.watch(pugPath, gulp.series('buildPug'));
+  done();
+});
 
+gulp.task('build', gulp.series(
+  'openServer',
+  gulp.parallel('buildSass', 'buildPug'),
+  'createPDF',
+  'closeServer',
+));
 
-const watch = () => {
-  gulp.watch(sassPath, buildCss);
-  gulp.watch(pugPath, buildPug);
-};
-
-// Build
-gulp.task('build', gulp.parallel(buildCss, buildPug));
-
-// Default
-gulp.task('default', watch);
+gulp.task('default', gulp.series('openServer', 'watch'));

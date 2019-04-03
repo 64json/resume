@@ -15,8 +15,14 @@
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "gulp": "^4.0.0",
+    "gulp-connect": "^5.7.0",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.2",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "puppeteer": "^1.14.0",
+    "through2": "^3.0.1"
+  },
+  "devDependencies": {
+    "gulp-html-pdf": "^0.3.0"
   }
 }
