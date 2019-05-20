@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto')
 
+@function dpx($size)
+  @return $size * .014in
+
 $theme-primary: #433952
 $theme-secondary: #EEEEEE
 $theme-tertiary: #F8F8F8
 $color-primary: #444444
 $color-secondary: #808080
-$font-large: 16rem
-$font-medium: 12rem
-$font-small: 10rem
+$font-large: dpx(16)
+$font-medium: dpx(12)
+$font-small: dpx(10)
 
 html
   width: 100%
   height: 100%
-  font-size: .014in
   margin: 0
   padding: 0
 
@@ -26,7 +28,7 @@ body
   font-family: 'Arial', sans-serif
   font-weight: lighter
   margin: 0
-  padding: 24rem
+  padding: dpx(24)
   width: 100%
   min-height: 100%
 
@@ -43,7 +45,7 @@ a
   display: flex
   flex-direction: column
   align-items: stretch
-  box-shadow: 0 0 24rem rgba(0, 0, 0, .16)
+  box-shadow: 0 0 dpx(24) rgba(0, 0, 0, .16)
   color: $color-primary
 
   .header
@@ -54,9 +56,9 @@ a
     color: $theme-secondary
 
     .name
-      padding: 32rem
+      padding: dpx(32)
       font-weight: bold
-      font-size: 24rem
+      font-size: dpx(24)
       color: white
 
     .bar
@@ -69,12 +71,12 @@ a
         display: flex
         justify-content: center
         align-items: center
-        padding: 6rem
+        padding: dpx(6)
         font-size: $font-small
         color: $theme-secondary
 
         i
-          margin-right: 4rem
+          margin-right: dpx(4)
 
   .body
     flex: 1
@@ -91,12 +93,12 @@ a
         display: flex
         align-items: center
         font-weight: bold
-        margin-bottom: 4rem
+        margin-bottom: dpx(4)
         font-size: $font-large
 
         &:after
           content: ''
-          margin-left: 16rem
+          margin-left: dpx(16)
           flex: 1
           height: 2px
           background-color: $theme-secondary
@@ -105,18 +107,18 @@ a
         .item
           display: flex
           flex-direction: column
-          margin-bottom: 4rem
+          margin-bottom: dpx(4)
 
           .primary,
           .row
-            margin-bottom: 4rem
+            margin-bottom: dpx(4)
 
           .primary
             display: flex
 
             .name
               flex: 1
-              margin-right: 12rem
+              margin-right: dpx(12)
 
             .level,
             .date
@@ -124,16 +126,16 @@ a
 
           .row
             color: $color-secondary
-            margin-left: 12rem
+            margin-left: dpx(12)
 
             &:before
               position: absolute
               content: '-'
-              margin-left: -8rem
+              margin-left: dpx(-8)
 
     .narrow
       background-color: $theme-secondary
-      width: 152rem
+      width: dpx(152)
 
     .wide
       background-color: $theme-tertiary
@@ -144,7 +146,7 @@ a
       display: flex
       flex-direction: column
       justify-content: space-around
-      padding: 20rem
+      padding: dpx(20)
 
 @media print
   @page
