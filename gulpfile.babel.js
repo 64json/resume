@@ -50,6 +50,7 @@ gulp.task('createPDF', () =>
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
         await page.goto(`http://localhost:${port}/resume.html`, { waitUntil: 'networkidle2' });
+        await new Promise(resolve => setTimeout(resolve, 1000)); // TODO: need to find a better way to fix FontAwesome not showing up
         const buffer = await page.pdf({ printBackground: true });
         await browser.close();
         file.contents = buffer;
