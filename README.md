@@ -1,3 +1,3 @@
 # Jinseo Park's Resume
 
-https://jasonpark.me/resume/
+## THIS REPOSITORY HAS BEEN MERGED INTO [parkjs814/parkjs814.github.io](https://github.com/parkjs814/parkjs814.github.io)
